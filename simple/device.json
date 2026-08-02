@@ -1,0 +1,1 @@
+{"role":"computer","mqtt_host":"192.168.1.74","mqtt_port":1883,"http_port":8766,"drone_id":"drone-01","rover_id":"rover-01"}
