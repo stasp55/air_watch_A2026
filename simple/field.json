@@ -1,8 +1,0 @@
-{
-  "grid": {"rows": 6, "cols": 6, "cell_size_m": 0.8},
-  "start_cell": "F1",
-  "target_candidates": ["A1", "E2"],
-  "label_cells": ["A1", "E2"],
-  "field_to_map": {"x": 0.0405, "y": -0.1872, "yaw": 0.03702},
-  "markers": {"own_ids": [7], "enemy_ids": [11]}
-}

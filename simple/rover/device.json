@@ -1,1 +1,0 @@
-{"role":"rover","mqtt_host":"192.168.1.74","mqtt_port":1883,"agent_id":"rover-01","ros_domain_id":77,"field_config":"/home/pi/install/td_bringup/share/td_bringup/config/field.yaml","camera_topic":"/image_raw/compressed","web_api_url":"http://127.0.0.1:8767/v1/state","web_calibration_url":"http://127.0.0.1:8767/v1/field-calibration"}
