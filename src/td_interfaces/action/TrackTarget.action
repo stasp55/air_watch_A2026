@@ -1,0 +1,15 @@
+# Долгоживущий навык: висеть над подвижной целью (ровером противника) и
+# непрерывно отдавать её позицию через feedback. Завершается только по отмене
+# или по таймауту.
+
+string kind               # обычно Detection.KIND_ENEMY
+float32 hover_alt         # высота висения, м
+float32 timeout           # 0 = бесконечно, до отмены
+---
+bool success
+string message
+float32 tracked_time_s
+---
+Detection detection       # свежая оценка позиции цели
+bool locked               # цель в кадре и удержана
+float32 pixel_error       # ошибка центрирования, доли ширины кадра

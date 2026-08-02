@@ -1,0 +1,43 @@
+# Параметры наземной станции: модель мира, диспетчер, мост.
+
+world_state:
+  ros__parameters:
+    publish_rate_hz: 10.0
+    enemy_ttl_s: 2.5              # старше — позиция противника считается неизвестной
+    block_enemy_neighbours: false # true = запрещать и соседние клетки
+    restrict_target_to_candidates: true
+
+dispatcher:
+  ros__parameters:
+    rover_id: rover-01
+    drone_id: drone-01
+    action_prefix: /td
+    tick_period_s: 0.5
+    autostart: false              # старт по сервису ~/start
+    log_path: /tmp/td_mission.jsonl
+    candidates: []                # пусто = взять target_candidates из field.yaml
+    scan_retries: 1
+    label_retries: 2
+    move_retries: 2
+    escort_enemy: true
+    land_when_done: true
+    takeoff_first: true
+
+dispatcher_link:
+  ros__parameters:
+    dispatcher_id: dispatcher
+    agents: [rover-01, drone-01]
+    transport: mqtt
+    mqtt_host: 127.0.0.1
+    mqtt_port: 1883
+    topic_prefix: td/v1/agents
+    goal_timeout_s: 180.0
+    accept_timeout_s: 5.0
+
+field_tf:
+  ros__parameters:
+    publish_map: true
+    publish_drone: false
+    map_frame: map
+    drone_frame: drone_local
+    field_frame: field

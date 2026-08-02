@@ -1,0 +1,9 @@
+# Посадка дрона.
+
+float32 timeout           # 0 = значение по умолчанию из параметров ноды
+---
+bool success
+string message
+---
+float32 current_altitude
+string phase              # DESCENDING / TOUCHDOWN

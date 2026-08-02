@@ -1,0 +1,17 @@
+# Обследовать список клеток-кандидатов и найти в них объект заданного типа.
+# Какой именно плагин зрения работает — определяется параметрами ноды
+# восприятия, а не этим запросом.
+
+string kind               # см. Detection.KIND_*
+Cell[] candidates         # пустой список = искать по всему полю
+float32 timeout
+float32 min_confidence    # 0 = взять порог из параметров ноды
+---
+bool success
+string message
+Detection detection
+---
+Cell inspecting
+uint8 candidates_done
+uint8 candidates_total
+float32 best_confidence

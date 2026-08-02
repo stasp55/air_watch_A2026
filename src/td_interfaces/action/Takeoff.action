@@ -1,0 +1,13 @@
+# Взлёт и выход на рабочую высоту.
+# Оформлено действием, а не сервисом, чтобы взлёт проксировался через тот же
+# мост, что и остальные навыки, и не требовал исключений в диспетчере.
+
+float32 altitude          # 0 = взять высоту из параметров ноды
+float32 speed             # 0 = из параметров ноды
+---
+bool success
+string message
+float32 reached_altitude
+---
+float32 current_altitude
+string phase              # ARMING / CLIMBING / HOLDING

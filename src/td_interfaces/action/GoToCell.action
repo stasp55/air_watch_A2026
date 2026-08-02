@@ -1,0 +1,16 @@
+# Переместить агента в указанную клетку. Реализуется и ровером (через Nav2),
+# и дроном (через offboard navigate) — интерфейс одинаковый, поэтому диспетчер
+# командует обоими одним способом.
+
+Cell goal
+bool face_wall            # ровер: доехав, довернуться к стене (для чтения метки)
+float32 yaw_deg           # желаемый курс в поле-фрейме; NaN = не важен
+float32 timeout           # 0 = взять значение по умолчанию из параметров ноды
+---
+bool success
+string message
+Cell final_cell
+---
+Cell current_cell
+float32 distance_remaining
+string phase              # PLANNING / MOVING / ALIGNING / BLOCKED

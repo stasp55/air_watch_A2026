@@ -1,0 +1,41 @@
+# Как включить запретные зоны в Nav2 ровера.
+#
+# Эти фрагменты нужно ДОБАВИТЬ в рабочий nav2_params.yaml ровера
+# (sverk_rover/src/system/rover_bringup/config/navigation/nav2_params.yaml).
+# Отдельным файлом Nav2 их не подхватит — это справочник, а не готовый конфиг.
+#
+# Смысл: td_rover_executor/keepout_publisher публикует маску, в которой
+# закрашена клетка противника. KeepoutFilter поднимает по ней стоимость, и
+# планировщик строит объезд сам. Логика миссии при этом не меняется.
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      # Было: plugins: [static_layer, obstacle_layer, inflation_layer]
+      plugins: [static_layer, obstacle_layer, inflation_layer]
+      filters: [keepout_filter]
+
+      keepout_filter:
+        plugin: nav2_costmap_2d::KeepoutFilter
+        enabled: true
+        filter_info_topic: /costmap_filter_info
+
+# Локальный костмап тоже полезно закрывать: если противник встал вплотную,
+# контроллер не должен пытаться проехать сквозь запретную клетку.
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      plugins: [obstacle_layer, inflation_layer]
+      filters: [keepout_filter]
+
+      keepout_filter:
+        plugin: nav2_costmap_2d::KeepoutFilter
+        enabled: true
+        filter_info_topic: /costmap_filter_info
+
+# Проверка после запуска:
+#   ros2 topic echo /costmap_filter_info --once
+#   ros2 topic echo /keepout_mask --once | head
+#   ros2 service call /keepout_publisher/set_blocked_cells \
+#       td_interfaces/srv/SetBlockedCells "{cells: [{name: 'C3'}]}"
+# затем в RViz увидеть, что план огибает C3.

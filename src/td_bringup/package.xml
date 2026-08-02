@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>td_bringup</name>
+  <version>0.1.0</version>
+  <description>Запуск системы «Дозор»: конфигурация поля, launch-профили, инструменты площадки.</description>
+  <maintainer email="team@town-dozor.local">town-dozor team</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>td_interfaces</exec_depend>
+  <exec_depend>td_world</exec_depend>
+  <exec_depend>td_link</exec_depend>
+  <exec_depend>td_dispatcher</exec_depend>
+  <exec_depend>td_rover_executor</exec_depend>
+  <exec_depend>td_drone_executor</exec_depend>
+  <exec_depend>td_perception_drone</exec_depend>
+  <exec_depend>td_perception_rover</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

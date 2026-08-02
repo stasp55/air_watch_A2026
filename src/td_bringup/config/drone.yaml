@@ -1,0 +1,68 @@
+# Параметры нод, работающих на дроне.
+
+drone_skills:
+  ros__parameters:
+    agent_id: drone-01
+    backend: sverk                # sverk | mock (mock = отладка без полёта)
+    frame_id: map
+    cruise_altitude_m: 1.6
+    speed_mps: 0.5
+    hover_target_topic: /td/drone/hover_target
+    hover_update_period_s: 0.5
+    hover_enabled: true
+    status_rate_hz: 4.0
+
+object_finder:
+  ros__parameters:
+    # Плагин поиска игрушки: hsv_color | yolo_onnx | vlm_query
+    plugin: cheburashka_hsv
+    kind: TARGET
+    image_topic: /camera_1/image_raw
+    camera_info_topic: /camera_1/camera_info
+    camera_frame: camera_optical_1
+    field_frame: map
+    samples_per_cell: 5
+    sample_period_s: 0.3
+    min_confidence: 0.6
+    scan_altitude_m: 1.6
+    goto_action: /goto_cell
+    use_goto: true
+    # Пороги HSV под конкретный свет площадки — калибруются в день 1.
+    hsv_lower: [10, 120, 90]
+    hsv_upper: [28, 255, 255]
+    min_area_px: 300
+    # Parameters transferred from cv.py; detector joins brown/orange parts.
+    cheburashka_brown_low: [0, 134, 32]
+    cheburashka_brown_high: [25, 255, 118]
+    cheburashka_orange_low: [6, 126, 199]
+    cheburashka_orange_high: [18, 255, 255]
+    cheburashka_min_area_px: 5000
+    cheburashka_merge_distance_px: 20
+    # Для plugin: yolo_onnx
+    model_path: ''
+    class_id: -1
+    conf_threshold: 0.35
+
+enemy_tracker:
+  ros__parameters:
+    markers_topic: /aruco/det/markers
+    markers_type: aruco_det_loc/msg/MarkerArray
+    camera_info_topic: /camera_1/camera_info
+    camera_frame: camera_optical_1
+    field_frame: map
+    enemy_marker_ids: []          # пусто = взять из field.yaml
+    hover_altitude_m: 2.0
+    detection_confidence: 0.9
+    hover_target_topic: /td/drone/hover_target
+    publish_always: true
+
+agent_link:
+  ros__parameters:
+    agent_id: drone-01
+    transport: mqtt
+    mqtt_host: 127.0.0.1
+    mqtt_port: 1883
+    topic_prefix: td/v1/agents
+    skills: [goto_cell, find_object, track_target, takeoff, land]
+    forward_detections: true
+    forward_status: true

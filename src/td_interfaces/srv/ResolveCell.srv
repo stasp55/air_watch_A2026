@@ -1,0 +1,13 @@
+# Служебная конвертация координат через общую модель поля.
+# Нужна отладочным инструментам и LLM-агенту, чтобы не дублировать
+# арифметику сетки у себя.
+
+# Заполните ЛИБО cell, ЛИБО point (в поле-фрейме).
+Cell cell
+geometry_msgs/Point point
+bool use_point
+---
+bool success
+string message
+Cell cell
+geometry_msgs/Point point   # центр клетки в поле-фрейме

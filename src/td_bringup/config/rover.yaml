@@ -1,0 +1,52 @@
+# Параметры нод, работающих на ровере.
+# field_config подставляется launch-файлом, здесь его указывать не нужно.
+
+goto_cell:
+  ros__parameters:
+    nav_action: /navigate_to_pose
+    map_frame: map
+    default_timeout_s: 90.0
+    respect_blocked_cells: true
+    wait_when_blocked_s: 8.0      # сколько ждать, пока противник уедет
+
+keepout_publisher:
+  ros__parameters:
+    resolution: 0.05
+    margin_m: 0.1                 # запас вокруг занятой клетки на габарит ровера
+    map_frame: map
+    mask_topic: /keepout_mask
+    filter_info_topic: /costmap_filter_info
+    follow_world_state: true
+
+rover_status:
+  ros__parameters:
+    agent_id: rover-01
+    pose_topic: /amcl_pose
+    odom_topic: /odom
+    battery_topic: /battery/state
+    publish_rate_hz: 5.0
+    pose_timeout_s: 3.0
+
+label_reader:
+  ros__parameters:
+    # Плагин чтения метки: template_match | vlm_label | ocr_tesseract
+    plugin: template_match
+    image_topic: /image_raw
+    # Каталог с картинками букв и цифр от организаторов.
+    # Заглушку можно сгенерировать: ros2 run td_bringup make_templates
+    templates_dir: /home/rover/td_templates
+    samples: 7
+    sample_period_s: 0.25
+    min_confidence: 0.6
+    publish_debug_image: true
+
+agent_link:
+  ros__parameters:
+    agent_id: rover-01
+    transport: mqtt               # mqtt | loopback
+    mqtt_host: 127.0.0.1
+    mqtt_port: 1883
+    topic_prefix: td/v1/agents
+    skills: [goto_cell, read_label]
+    forward_detections: true
+    forward_status: true

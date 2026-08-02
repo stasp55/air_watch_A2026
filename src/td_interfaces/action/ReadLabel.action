@@ -1,0 +1,16 @@
+# Прочитать бумажку с именем финишной клетки камерой ровера.
+# Нода сама делает несколько попыток и выдаёт моду по ответам.
+
+float32 timeout
+uint8 samples             # сколько кадров агрегировать; 0 = из параметров ноды
+float32 min_confidence
+---
+bool success
+string message
+Cell cell                 # распознанная финишная клетка
+float32 confidence
+string raw_text           # что реально вернул плагин, до нормализации
+---
+uint8 samples_done
+string last_text
+float32 best_confidence
