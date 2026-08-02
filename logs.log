@@ -1,0 +1,105 @@
+16:59:52 — ← drone-01: vlm No.
+16:59:52 — ← drone-01: vlm_progress VLM: generating
+16:59:44 — ← drone-01: vlm_progress VLM: generating
+16:59:16 — ← drone-01: light orange light off
+16:59:11 — ← drone-01: vlm_progress VLM: vision_encoding
+16:59:11 — AUTO mission complete
+16:59:11 — AUTO command confirmed: land: Land command sent
+16:59:11 — ← drone-01: result land: Land command sent
+16:59:11 — ← drone-01: accepted land
+16:59:11 — → drone-01: land
+16:59:11 — AUTO E2: Cheburashka visible; proceeding immediately
+16:59:11 — ← drone-01: vlm_progress VLM: preprocessing
+16:59:11 — ← drone-01: cheburashka found, outside configured field; height 2.11 m, threshold 1754.7114706874725 px2
+16:59:11 — ← drone-01: vlm frame sent to VLM; checking for brown plush toy
+16:59:11 — ← drone-01: light blue light on for 5 s
+16:59:11 — ← drone-01: cheburashka visible; area 1838 px2
+16:59:11 — ← drone-01: accepted check_cheburashka
+16:59:10 — → drone-01: check_cheburashka {'debug': False}
+16:59:10 — AUTO E2: vision scan 1
+16:59:10 — AUTO E2: arrival confirmed by ArUco status
+16:59:01 — AUTO command confirmed: goto E2: Navigate started; aruco_map target 1.20, 1.06, 2.00
+16:59:01 — ← drone-01: result goto E2: Navigate started; aruco_map target 1.20, 1.06, 2.00
+16:59:01 — ← drone-01: navigation_diagnostics {"frame": "aruco_map", "current_aruco": [0.16, 4.34, 2.14], "target_aruco": [1.2, 1.06, 2.0]}
+16:59:01 — ← drone-01: accepted goto
+16:59:01 — → drone-01: goto {'cell': 'E2'}
+16:59:01 — AUTO 2/2: command goto E2
+16:59:01 — AUTO A1: hover complete, object not detected
+16:59:00 — ← drone-01: cheburashka not found
+16:59:00 — ← drone-01: accepted check_cheburashka
+16:59:00 — → drone-01: check_cheburashka {'debug': False}
+16:59:00 — AUTO A1: vision scan 5
+16:58:59 — ← drone-01: cheburashka not found
+16:58:59 — ← drone-01: accepted check_cheburashka
+16:58:59 — → drone-01: check_cheburashka {'debug': False}
+16:58:59 — AUTO A1: vision scan 4
+16:58:58 — ← drone-01: cheburashka not found
+16:58:58 — ← drone-01: accepted check_cheburashka
+16:58:58 — → drone-01: check_cheburashka {'debug': False}
+16:58:58 — AUTO A1: vision scan 3
+16:58:57 — ← drone-01: cheburashka not found
+16:58:57 — ← drone-01: accepted check_cheburashka
+16:58:57 — → drone-01: check_cheburashka {'debug': False}
+16:58:57 — AUTO A1: vision scan 2
+16:58:56 — ← drone-01: cheburashka not found
+16:58:56 — ← drone-01: accepted check_cheburashka
+16:58:56 — → drone-01: check_cheburashka {'debug': False}
+16:58:56 — AUTO A1: vision scan 1
+16:58:56 — AUTO A1: arrival confirmed by ArUco status
+16:58:43 — AUTO command confirmed: goto A1: Navigate started; aruco_map target 0.28, 4.22, 2.00
+16:58:43 — ← drone-01: result goto A1: Navigate started; aruco_map target 0.28, 4.22, 2.00
+16:58:43 — ← drone-01: navigation_diagnostics {"frame": "aruco_map", "current_aruco": [4.23, 4.42, 1.5], "target_aruco": [0.28, 4.22, 2.0]}
+16:58:43 — ← drone-01: accepted goto
+16:58:43 — → drone-01: goto {'cell': 'A1'}
+16:58:43 — AUTO 1/2: command goto A1
+16:58:43 — AUTO start cell A6; shortest route: A1 → E2
+16:58:37 — AUTO command confirmed: takeoff: Navigate started
+16:58:37 — ← drone-01: result takeoff: Navigate started
+16:58:36 — ← drone-01: accepted takeoff
+16:58:35 — → drone-01: takeoff
+16:58:35 — AUTO mission started
+16:58:29 — ← drone-01: vlm VLM not started; missing: /home/sverk/vlm_models/SmolVLM-256M-Instruct-Q4_K_M.gguf, /home/sverk/vlm_models/mmproj-SmolVLM-256M-Instruct-f16.gguf, /home/sverk/llama.cpp/build/bin/llama-cli
+16:58:27 — ← drone-01: vlm VLM not started; missing: /home/sverk/vlm_models/SmolVLM-256M-Instruct-Q4_K_M.gguf, /home/sverk/vlm_models/mmproj-SmolVLM-256M-Instruct-f16.gguf, /home/sverk/llama.cpp/build/bin/llama-cli
+16:54:51 — ← drone-01: vlm No.
+16:54:51 — ← drone-01: vlm_progress VLM: generating
+16:54:44 — ← drone-01: vlm_progress VLM: generating
+16:54:17 — ← drone-01: light orange light off
+16:54:12 — ← drone-01: vlm_progress VLM: vision_encoding
+16:54:12 — ← drone-01: vlm_progress VLM: preprocessing
+16:54:12 — ← drone-01: cheburashka found, outside configured field; height 1.50 m, threshold 2800.0 px2
+16:54:12 — ← drone-01: vlm frame sent to VLM; checking for brown plush toy
+16:54:12 — ← drone-01: light blue light on for 5 s
+16:54:12 — ← drone-01: cheburashka visible; area 7976 px2
+16:54:12 — ← drone-01: accepted check_cheburashka
+16:54:12 — → drone-01: check_cheburashka {'cell': '', 'debug': False}
+16:53:52 — ← drone-01: vlm VLM not started; missing: /home/sverk/vlm_models/SmolVLM-256M-Instruct-Q4_K_M.gguf, /home/sverk/vlm_models/mmproj-SmolVLM-256M-Instruct-f16.gguf, /home/sverk/llama.cpp/build/bin/llama-cli
+16:53:49 — ← drone-01: vlm VLM not started; missing: /home/sverk/vlm_models/SmolVLM-256M-Instruct-Q4_K_M.gguf, /home/sverk/vlm_models/mmproj-SmolVLM-256M-Instruct-f16.gguf, /home/sverk/llama.cpp/build/bin/llama-cli
+16:50:42 — ← rover-01: result C6
+2
+16:50:42 — ← rover-01: ocr C6
+2
+16:50:39 — ← rover-01: log OCR: recognising text with RapidOCR
+16:50:39 — ← rover-01: log OCR: waiting for a fresh frame on /image_raw/compressed (up to 8 s)
+16:50:39 — ← rover-01: log received MQTT command read_text: {'cell': 'E2', 'debug': False}
+16:50:39 — ← rover-01: accepted read_text
+16:50:39 — → rover-01: read_text {'cell': 'E2', 'debug': False}
+16:50:34 — ← rover-01: log rover web API: map position 3.28, 0.61 -> field cell E2
+16:50:34 — ← rover-01: ready rover MQTT adapter ready; camera OCR listens to /image_raw/compressed
+16:50:33 — ← rover-01: ready rover MQTT adapter ready; camera OCR listens to /image_raw/compressed
+16:49:11 — → rover-01: read_text {'cell': 'E2', 'debug': False}
+16:48:41 — → rover-01: read_text {'cell': 'E2', 'debug': False}
+16:46:32 — → rover-01: goto {'cell': 'E2', 'debug': False}
+16:44:44 — ← rover-01: log rover web API: map position 4.13, -0.47 -> field cell D1
+16:43:05 — ← rover-01: result AnxQhar
+21.20000
+16:43:05 — ← rover-01: ocr AnxQhar
+21.20000
+16:43:01 — ← rover-01: log OCR: recognising text with RapidOCR
+16:43:00 — ← rover-01: log OCR: waiting for a fresh frame on /image_raw/compressed (up to 8 s)
+16:43:00 — ← rover-01: log received MQTT command read_text: {'cell': 'C2', 'debug': False}
+16:43:00 — ← rover-01: accepted read_text
+16:43:00 — → rover-01: read_text {'cell': 'C2', 'debug': False}
+16:42:55 — ← rover-01: log rover web API: map position 2.25, 1.63 -> field cell outside configured field
+16:42:54 — ← rover-01: log AMCL fallback: map position 2.25, 1.63 -> field cell D3
+16:42:54 — ← rover-01: ready rover MQTT adapter ready; camera OCR listens to /image_raw/compressed
+
